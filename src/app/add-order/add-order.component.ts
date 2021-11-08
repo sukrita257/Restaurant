@@ -28,7 +28,6 @@ export class AddOrderComponent implements OnInit {
 
     this.service.getItems().subscribe((data)=> {
       this.itemsList = data
-      console.log(data)
     })
   }
 
@@ -47,7 +46,7 @@ export class AddOrderComponent implements OnInit {
 
     this.service.postOrder(this.orderDetails).subscribe((data) => {
     })
-    window.location.reload()
+    
   }
 
 }
