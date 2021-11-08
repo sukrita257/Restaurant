@@ -19,6 +19,13 @@ export class AddItemComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    loadMenu()
+  }
+  
+  loadMenu(){
+    this.service.getItems().subscribe((data)=> {
+      this.itemsList = data
+    })
   }
 
   clear(){
@@ -36,7 +43,7 @@ export class AddItemComponent implements OnInit {
     this.service.postItem(this.itemForm.value).subscribe(res=>{
       console.log(this.itemForm.value)
     })
-    window.location.reload()
+    loadMenu()
     this.clear()
   }
 }
