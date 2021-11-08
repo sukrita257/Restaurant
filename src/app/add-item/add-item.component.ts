@@ -33,6 +33,12 @@ export class AddItemComponent implements OnInit {
   clear(){
     this.itemForm.reset()
   }
+  
+  deleteData(id:number){
+    this.service.delItem(id).subscribe((data) => {
+      this.loadMenu()
+    })
+  }
 
   submitItem(){
     Object.keys(this.itemForm.controls).forEach(field => {
