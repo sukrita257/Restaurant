@@ -10,6 +10,7 @@ import { RestaurantService } from '../restaurant.service';
 })
 export class AddItemComponent implements OnInit {
   itemForm:FormGroup
+  itemsList?: Array<Items>
 
   constructor(private service: RestaurantService, private router: Router) { 
     this.itemForm = new FormGroup({
@@ -19,7 +20,7 @@ export class AddItemComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    loadMenu()
+    this.loadMenu()
   }
   
   loadMenu(){
@@ -43,7 +44,7 @@ export class AddItemComponent implements OnInit {
     this.service.postItem(this.itemForm.value).subscribe(res=>{
       console.log(this.itemForm.value)
     })
-    loadMenu()
+    this.loadMenu()
     this.clear()
   }
 }
