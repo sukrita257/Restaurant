@@ -32,3 +32,42 @@
         </form>
     </div>
 </div>
+<div class="card shadow" style="background-color: rgb(124, 25, 128);">
+    <div class="card-header">
+        <h4>MENU</h4>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Item</th>
+                        <th>Price Per Unit</th>
+                        <th>Remove Item</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>ID</th>
+                        <th>Item</th>
+                        <th>Price Per Unit</th>
+                        <th>Remove Item</th>
+                    </tr>
+                </tfoot>
+
+                <tbody>
+                    <tr class="tdata" *ngFor="let item of itemsList">
+                        <td>{{item.id}}</td>
+                        <td>{{item.item_name}}</td>
+                        <td>{{item.price}}</td>
+                        <td>
+                            <button class="btn-danger btn-sm" (click)="deleteData(item.id)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>
