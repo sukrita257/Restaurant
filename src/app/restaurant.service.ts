@@ -7,7 +7,7 @@ import { Admin, Items, Orders } from './model';
 })
 export class RestaurantService {
   formData?: Items
-  readonly rootURL="http://restaurant-service-1.azurewebsites.net/api"
+  readonly rootURL="https://restaurant-service-1.azurewebsites.net/api"
 
   constructor(private http: HttpClient ) { }
 
