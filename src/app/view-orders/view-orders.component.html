@@ -1,0 +1,33 @@
+<div class="card shadow" style="background-color: rgb(124, 25, 128);">
+    <div class="card-header">
+        <h2>ORDERS</h2>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Customer Name</th>
+                        <th>Bill Amount</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Customer Name</th>
+                        <th>Bill Amount</th>
+                    </tr>
+                </tfoot>
+
+                <tbody>
+                    <tr class="tdata" *ngFor="let order of ordersList">
+                        <td>{{order.OrderID}}</td>
+                        <td>{{order.Customer}}</td>
+                        <td>{{order.Amount}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

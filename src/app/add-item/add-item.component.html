@@ -1,0 +1,35 @@
+<div class="card shadow" style="background-color: rgb(124, 25, 128);">
+    <div class="card-header">
+        <h2>ADD NEW ITEM</h2>
+    </div>
+    <div class="card-body">
+        <form [formGroup]="itemForm" (ngSubmit)="submitItem()">
+            <div class="row">
+                <div class="col-lg-6 col-xs-12" style="padding: 2px;">
+                    <label for="">Item Name </label>
+                    <input [ngClass]="{
+                        'has-error':itemForm.controls.item_name.touched && itemForm.controls.item_name.invalid,
+                        'has-success' : itemForm.controls.item_name.touched && itemForm.controls.item_name.valid
+                    }" type="text" formControlName="item_name" class="form-control">
+                    <span style="color:red;"
+                    *ngIf="itemForm.controls.item_name.touched && itemForm.controls.item_name.invalid">Please Enter Item Name</span>
+                </div>
+                <div class="col-lg-6 col-xs-12" style="padding: 2px;">
+                    <label for="">Price per Unit </label>
+                    <input [ngClass]="{
+                        'has-error':itemForm.controls.price.touched && itemForm.controls.price.invalid,
+                        'has-success' : itemForm.controls.price.touched && itemForm.controls.price.valid
+                    }" type="text" formControlName="price" class="form-control">
+                    <span style="color:red;"
+                    *ngIf="itemForm.controls.price.touched && itemForm.controls.price.invalid">Please Enter Price</span>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-lg-12">
+                    <input type="submit" class="btn-primary btn-sm"  style="background-color: rgb(124, 25, 128); border-color: rgb(124, 25, 128);">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<app-menu></app-menu>

@@ -1,0 +1,58 @@
+<div class="card shadow" style="background-color: rgb(124, 25, 128);">
+    <div class="card-header">
+        <h2>ORDER</h2>
+    </div>
+    <div class="card-body">
+        <div class="col" style="display: flex; justify-content: space-between;">
+            <div>
+                <label>Customer Name </label>
+                <input type="text" id="name" name="name" #name>
+            </div>
+        </div>
+        <br>
+        <button class="btn-primary btn-sm"  style="background-color: rgb(124, 25, 128); border-color: rgb(124, 25, 128);" (click)="submitOrder()">Checkout</button>
+    </div>
+</div>
+<div class="card shadow" style="background-color: rgb(124, 25, 128);">
+    <div class="card-header">
+        <h4>MENU</h4>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Item</th>
+                        <th>Price Per Unit</th>
+                        <th>Quantity</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>ID</th>
+                        <th>Item</th>
+                        <th>Price Per Unit</th>
+                        <th>Quantity</th>
+                        <th>Amount</th>
+                    </tr>
+                </tfoot>
+
+                <tbody>
+                    <tr class="tdata" *ngFor="let item of itemsList">
+                        <td>{{item.id}}</td>
+                        <td>{{item.item_name}}</td>
+                        <td>Rs.{{item.price}}</td>
+                        <td style="width: 20%;">
+                            <input type="number" name="quantity" min="0" [(ngModel)]="qty[item.id]" style="width: 20%;">
+                        </td>
+                        <td>
+                            <label *ngIf="qty[item.id]>0">{{qty[item.id]*item.price}}</label>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
