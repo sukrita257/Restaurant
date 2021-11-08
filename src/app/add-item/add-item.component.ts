@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Items } from '../model';
 import { Router } from '@angular/router';
 import { RestaurantService } from '../restaurant.service';
 
